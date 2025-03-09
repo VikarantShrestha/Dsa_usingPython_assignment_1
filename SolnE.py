@@ -2,7 +2,7 @@ str=input("enter text : ")
 dict={}
 
 def replace_char(str):
-    for i in range(len(str)-1):
+    for i in range(len(str)):
         if str[i] in dict:
             str=str[:i]+ "*" + str[i+1:]
         dict[str[i]]=i
