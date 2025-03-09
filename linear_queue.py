@@ -1,6 +1,6 @@
 class linear_queue:
     def __init__(self,size):
-        self.l=[]
+        self.l = [None] * size
         self.front=self.rear=-1
         self.size=size
     def Insertion(self,e):
@@ -10,7 +10,7 @@ class linear_queue:
             if self.front==-1:
                 self.front=0
             self.rear+=1
-            self.l.append(e)
+            self.l[self.rear] = e
     def Deletion(self):
         if self.front==-1:
             print("Queue is already empty")
@@ -19,8 +19,11 @@ class linear_queue:
         else:
             self.front+=1
     def Traverse(self):
-        for i in range(self.front,self.rear+1):
-            print(self.l[i])
+        if self.front == -1:
+            print("Queue is empty")
+        else:
+            for i in range(self.front, self.rear + 1):
+                print(self.l[i])
         
 ob=linear_queue(4)
 ob.Insertion(2)
